@@ -1,4 +1,17 @@
 <form action="submit">
-  <input placeholder="Coloca la tarea" type="text" class="form-control" />
-  <button type="button" class="btn btn-primary my-4 w-100">Añadir</button>
+  <input
+    placeholder="Coloca la tarea"
+    type="text"
+    class="form-control"
+    name="todo"
+    [(ngModel)]="todoInput"
+  />
+  <button type="submit" class="btn btn-primary my-4 w-100" (click)="addTodo()">
+    Agregar una nueva tarea
+  </button>
 </form>
+<app-todo-list
+  *ngFor="let todo of todos; let i = index"
+  [todo]="todo"
+  [idx]="i"
+></app-todo-list>
