@@ -14,6 +14,7 @@ export class TodoInputsComponent {
   addTodo() {
     let newTodo = new Todo(this.todoInput);
     this.todos.push(newTodo);
-    console.log(newTodo.body);
+    this.todoInput = '';
+    console.log(this.todos);
   }
 }
